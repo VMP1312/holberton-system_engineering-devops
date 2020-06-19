@@ -12,6 +12,6 @@ do
     then
 	echo "Buzz"
     else
-	printf "%d\n" $cnt
+	echo "$cnt"
     fi
 done
