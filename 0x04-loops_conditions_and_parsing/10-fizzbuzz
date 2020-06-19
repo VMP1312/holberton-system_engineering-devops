@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 100.
+for ((cnt=1;cnt<=100;cnt++))
+do
+    if [[ $(( cnt % 15 )) == 0 ]]
+    then
+	echo "FizzBuzz"
+    elif [[ $(( cnt % 3 )) == 0 ]]
+    then
+	echo "Fizz"
+    elif [[ $(( cnt % 5 )) == 0 ]]
+    then
+	echo "Buzz"
+    else
+	printf "%d\n" $cnt
+    fi
+done
