@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
-#Install Nginx
-#301 Redirect
+# Install Nginx
+# 301 Redirect
 apt-get update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
 echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
 sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/C404.html
-sed -i '/listen 80 default_server/a error_page 404 /C404.html; location = /C404.html {root /usr/share/nginx/html;\n internal;}' /etc/nginx/sites-available/default
 service nginx start
