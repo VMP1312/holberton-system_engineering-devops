@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Display information about subdomains.
+
+catch() {
+    info=$(dig "$1.$2" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n')
+	rec=$(echo "$info" | tail -2 | head -1)
+	ip=$(echo "$info" |tail -1)
+    echo "$1 $rec $ip" | awk '{print "The subdomain "$1" is a "$2" record and points to "$3}'
+}
+
+if [ "$#" == 1 ]
+then 
+    catch "www" "$1"
+    catch "lb-01" "$1"
+    catch "web-01" "$1"
+    catch "web-02" "$1"
+else
+    catch "$2" "$1"
+fi
