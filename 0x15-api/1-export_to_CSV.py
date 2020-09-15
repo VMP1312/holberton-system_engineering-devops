@@ -3,9 +3,10 @@
 Returns information using a REST API.
 """
 
+import csv
 import requests
 from sys import argv
-import csv
+
 
 if __name__ == "__main__":
     url = 'https://jsonplaceholder.typicode.com'
