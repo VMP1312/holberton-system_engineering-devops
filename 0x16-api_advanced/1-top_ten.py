@@ -10,8 +10,9 @@ def top_ten(subreddit):
         print(None)
 
     url = 'https://www.reddit.com/r/{}/hot.json'
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
-    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"}
+    headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) \
+         AppleWebKit/537.36 (KHTML, like Gecko; Google Web Preview) \
+              Chrome/27.0.1453 Safari/537.36"}
 
     req = requests.get(url.format(subreddit), headers=headers,
                        params={'limit': 10}, allow_redirects=False)
