@@ -63,6 +63,12 @@ internal;
                 proxy_pass http://127.0.0.1:5002/api/;
         }
 
+		location /static/ {
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
+                autoindex on; 
+        }
+
+
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
         #
         #location ~ \.php$ {
