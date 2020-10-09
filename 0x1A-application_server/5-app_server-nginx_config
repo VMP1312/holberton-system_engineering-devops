@@ -56,20 +56,11 @@ internal;
         location /airbnb-onepage/ {
                 proxy_pass http://127.0.0.1:5000;
         }
-        location /airbnb-dynamic/number_odd_or_even/ {
+		location /airbnb-dynamic/number_odd_or_even/ {
                 proxy_pass http://127.0.0.1:5001/number_odd_or_even/;
         }
-        location /api {
-                proxy_pass http://0.0.0.0:5002/api;
-        }
-        location /hbnb_static/ {
-                alias /data/web_static/current/;
-        }
-        location /static {
-                proxy_pass http://127.0.0.1:5003/;
-        }
-        location / {
-                proxy_pass http://127.0.0.1:5003/2-hbnb;
+		location /api/ {
+                proxy_pass http://127.0.0.1:5002/api/;
         }
 
         # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
